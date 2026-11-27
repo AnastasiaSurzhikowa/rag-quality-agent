@@ -1,0 +1,301 @@
+{
+  "started_at_utc": "2026-11-27T00:00:11.397658+00:00",
+  "model": "qwen2.5:3b",
+  "timeout_seconds": 120.0,
+  "prompt_sha256": "f171ab4267317eeb7a020a37d48b86065829c7bd068e304811c61074ef11b29d",
+  "question": "Во сколько открывается и закрывается тестовый сервис?",
+  "reference_context": [
+    "Тестовый сервис работает ежедневно с 09:00 до 18:00"
+  ],
+  "context": [
+    "Тестовый сервис работает ежедневно с 09:00 до 18:00"
+  ],
+  "temperatures": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "repeats": 2,
+  "runs": [
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 0.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям. Он полностью отражает информацию из эталонного чанка без добавления лишних сведений или искажений."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 12.558
+    },
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 0.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ полностью соответствует вопросу и полностью основан на переданном контексте. Ничего лишнего, ничего не добавлено, ничего не упущено."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 3.153
+    },
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 0.5,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям RAG-системы. Он полностью отражает информацию из эталонных чанков и не содержит лишних или искаженных фактов, а также не опирается на неподходящие фрагменты контекста."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 4.778
+    },
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 0.5,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям. Он полностью отражает информацию из эталонного чанка без добавления или уменьшения информации."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 3.082
+    },
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 1.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ полностью соответствует критериям, так как полностью отражает информацию из reference_context и используется предоставленный контекст для получения ответа."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 3.082
+    },
+    {
+      "case_id": "correct",
+      "answer": "Тестовый сервис открывается в 09:00 и закрывается в 18:00",
+      "expected_score": 1,
+      "temperature": 1.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ корректно соответствует переданным в контексте сведениям и полностью отвечает на вопрос. Время работы и временное закрытие тестового сервиса указаны точно, как в контексте и в ответе. Контекст достаточно полный, чтобы полностью ответить на вопрос о временном режиме работы сервиса, несмотря на его короткое наличие в исходных данных (только время работы)."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 6.739
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 0.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 0,
+        "tags": [
+          "not_full"
+        ],
+        "explanation": "Ответ не соответствует полному контексту, так как не указывает время открытия тестового сервиса, хотя это указано в эталонных чанках. Время закрытия указано верно."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 5.543
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 0.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 0,
+        "tags": [
+          "not_full"
+        ],
+        "explanation": "Ответ не соответствует полному контексту, так как не указывает время открытия тестового сервиса, хотя это указано в эталонных чанках. Время закрытия указано верно, но это не полный ответ к вопросу пользователя."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 5.554
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 0.5,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 0,
+        "tags": [
+          "not_full"
+        ],
+        "explanation": "Ответ не соответствует полному контексту. Он утверждает, что сервис открывается в 10:00 и закрывается в 18:00, что не совпадает с указанной в контексте дневной работой с 09:00 до 18:00. Недостаточно сказано о времени открытия сервиса, хотя это было указано в reference_context."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 7.676
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 0.5,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям. Он полностью соответствует информации в эталонном контексте (09:00 до 18:00). Ничего лишнего, ничего не добавлено, что не подтверждается эталонными данными, и нет неподходящих фрагментов в ответе."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 5.619
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 1.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 0,
+        "tags": [
+          "not_full"
+        ],
+        "explanation": "Ответ недостаточен, так как не указывает время открытия и закрытия тестового сервиса. В предоставленном контексте указано, что тестовый сервис работает с 09:00 до 18:00, но эти данные не включены в ответ. Добавлено время открытия и закрытия, что не соответствует данным контекста."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 6.675
+    },
+    {
+      "case_id": "distortion",
+      "answer": "Тестовый сервис открывается в 10:00 и закрывается в 18:00",
+      "expected_score": 0,
+      "temperature": 1.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 0,
+        "tags": [
+          "not_full"
+        ],
+        "explanation": "Ответ не полон, так как пропущены часы начала и окончания работы сервиса (10:00 - 18:00)."
+      },
+      "score_matches_expected": true,
+      "elapsed_seconds": 3.512
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 0.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям RAG-системы. Он полностью соответствует информации в эталонных чанках, указывая, что тестовый сервис открывается в 09:00 и закрывается в 18:00."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 5.475
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 0.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям. Он полностью отражает информацию из reference_context без добавления или искажения фактов."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 2.846
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 0.5,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ соответствует критериям. Ответ полностью соответствует информации в эталонных чанках, указывая, что тестовый сервис открывается в 09:00 и закрывается в 18:00."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 4.161
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 0.5,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ полностью соответствует критериям RAG-системы. Он основан на предоставленном контексте, который указывает на то, что тестовый сервис работает с 09:00 до 18:00."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 3.973
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 1.0,
+      "repeat": 1,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ полностью соответствует критериям и не содержит лишней информации. Источник информации приведен в reference_context и совпадает с данным в ответе."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 3.188
+    },
+    {
+      "case_id": "incomplete",
+      "answer": "Тестовый сервис открывается в 09:00",
+      "expected_score": 0,
+      "temperature": 1.0,
+      "repeat": 2,
+      "status": "valid",
+      "result": {
+        "score": 1,
+        "tags": [],
+        "explanation": "Ответ полностью соответствует критериям, так как использует переданный контекст, описывая время работы тестового сервиса с 09:00 до 18:00."
+      },
+      "score_matches_expected": false,
+      "elapsed_seconds": 3.735
+    }
+  ]
+}

@@ -151,8 +151,10 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
-.venv
+.venv/
 env/
 venv/
 ENV/
@@ -221,3 +223,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local editor settings
+.vscode/
